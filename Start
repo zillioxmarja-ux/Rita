@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>New GitHub Repository</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  :root {
+    --bg: #0e0e11;
+    --card: #16171c;
+    --border: #2a2b32;
+    --text: #e9e9ee;
+    --accent: #4aa8ff;
+    --radius: 14px;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", sans-serif;
+    line-height: 1.6;
+  }
+
+  header {
+    text-align: center;
+    padding: 70px 20px 50px;
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 40px;
+    letter-spacing: -0.5px;
+  }
+
+  header p {
+    margin-top: 12px;
+    opacity: 0.7;
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 70px;
+  }
+
+  .block {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 28px;
+    transition: 0.25s ease;
+  }
+
+  .block:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+
+  h2 {
+    margin-top: 0;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 12px;
+  }
+
+  pre {
+    background: #0b0b0d;
+    padding: 16px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    overflow-x: auto;
+  }
+
+  code {
+    color: var(--accent);
+  }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    opacity: 0.6;
+    padding: 30px 0 50px;
+    font-size: 14px;
+  }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>my-new-repository</h1>
+  <p>A clean and modern starter page for any GitHub project</p>
+</header>
+
+<div class="container">
+
+  <div class="block">
+    <h2>📌 About the Project</h2>
+    <p>
+      This repository contains the initial structure for your GitHub project.
+      You can use it as a template for documentation, code samples, or any new idea you want to develop.
+    </p>
+  </div>
+
+  <div class="block">
+    <h2>🚀 Getting Started</h2>
+    <p>Clone the repository:</p>
+    <pre><code>git clone https://github.com/USERNAME/my-new-repository.git
+cd my-new-repository</code></pre>
+  </div>
+
+  <div class="block">
+    <h2>📁 Project Structure</h2>
+    <pre><code>/
+├── index.html
+├── src/
+│   └── main.js
+└── docs/
+    └── guide.md</code></pre>
+  </div>
+
+  <div class="block">
+    <h2>🔗 Useful Links</h2>
+    <p>GitHub Repo: <a href="#">https://github.com/USERNAME/my-new-repository</a></p>
+    <p>Live Page (GitHub Pages): <code>https://USERNAME.github.io/my-new-repository/</code></p>
+  </div>
+
+</div>
+
+<footer>
+  Created with ❤️ — Customize this page in <code>index.html</code>
+</footer>
+
+</body>
+</html>
