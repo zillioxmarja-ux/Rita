@@ -1,64 +1,42 @@
-# --- 1. Подготовка локальной среды ---
+# --- 1. Подготовка локальной среды (используем то же имя проекта) ---
 
-PROJECT_NAME="ultra-enhanced-repo-2025" 
+PROJECT_NAME="hyper-enhanced-repo-2025" 
 
-# Создание и переход в новую директорию
 mkdir $PROJECT_NAME
 cd $PROJECT_NAME
-
-# Инициализация Git
 git init
 
-# --- 2. Улучшенные метаданные и документация ---
+# --- 2. Добавление файлов высокого уровня стандартизации ---
 
-# 2.1. README.md (с секцией для установки)
-echo "# $PROJECT_NAME" > README.md
-echo "\n[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)" >> README.md
-echo "\n## 🚀 Установка\n\n1. Склонируйте репозиторий:\n\`\`\`bash\ngit clone <URL_РЕПОЗИТОРИЯ>\n\`\`\`\n2. Установите зависимости (если применимо):\n\`\`\`bash\npip install -r requirements.txt\n\`\`\`" >> README.md
+# 2.1. Создание каталога для GitHub Actions
+mkdir -p .github/workflows
 
-# 2.2. .gitignore
-echo "# Игнорируем файлы Python" > .gitignore
-echo "__pycache__/" >> .gitignore
-echo "*.pyc" >> .gitignore
-echo "*.log" >> .gitignore
-echo ".DS_Store" >> .gitignore
-echo "# Игнорируем файлы IDE и среды" >> .gitignore
-echo ".vscode/" >> .gitignore
-echo "venv/" >> .gitignore
-echo ".env" >> .gitignore
+# 2.2. Конфигурация GitHub Actions для CI (Continuous Integration)
+# Этот файл будет запускать тесты при каждом пуше
+echo "name: Python CI Pipeline" > .github/workflows/python_ci.yml
+echo "on:" >> .github/workflows/python_ci.yml
+echo "  push:" >> .github/workflows/python_ci.yml
+echo "    branches: [ main ]" >> .github/workflows/python_ci.yml
+echo "  pull_request:" >> .github/workflows/python_ci.yml
+echo "    branches: [ main ]" >> .github/workflows/python_ci.yml
+echo "jobs:" >> .github/workflows/python_ci.yml
+echo "  build:" >> .github/workflows/python_ci.yml
+echo "    runs-on: ubuntu-latest" >> .github/workflows/python_ci.yml
+echo "    steps:" >> .github/workflows/python_ci.yml
+echo "    - uses: actions/checkout@v4" >> .github/workflows/python_ci.yml
+echo "    - name: Set up Python" >> .github/workflows/python_ci.yml
+echo "      uses: actions/setup-python@v5" >> .github/workflows/python_ci.yml
+echo "      with:" >> .github/workflows/python_ci.yml
+echo "        python-version: '3.11'" >> .github/workflows/python_ci.yml
+echo "    - name: Install dependencies" >> .github/workflows/python_ci.yml
+echo "      run: pip install -r requirements.txt" >> .github/workflows/python_ci.yml
+echo "    - name: Run linter (Flake8 Check)" >> .github/workflows/python_ci.yml
+echo "      run: pip install flake8 && flake8 ." >> .github/workflows/python_ci.yml
+echo "    - name: Run tests" >> .github/workflows/python_ci.yml
+echo "      run: echo 'Place your test command here, e.g., pytest'" >> .github/workflows/python_ci.yml
 
-# 2.3. LICENSE (только заголовок, полный текст лицензии обычно копируется)
-echo "MIT License" > LICENSE
-echo "" >> LICENSE
-echo "Copyright (c) 2025 <ВАШЕ_ИМЯ_ПОЛЬЗОВАТЕЛЯ>" >> LICENSE
-
-# 2.4. CONTRIBUTING.md (Руководство для контрибьюторов)
-echo "# Руководство по внесению вклада (Contributing)" > CONTRIBUTING.md
-echo "\nМы приветствуем вклад в этот проект! Пожалуйста, следуйте этим рекомендациям:" >> CONTRIBUTING.md
-echo "\n## 📜 Правила\n\n* Используйте ветку \`main\` для отправки pull requests (PRs)." >> CONTRIBUTING.md
-echo "* Подробно описывайте свои изменения и тестируйте код перед отправкой." >> CONTRIBUTING.md
-
-# 2.5. requirements.txt (Пример файла для зависимостей Python)
-echo "# Зависимости проекта" > requirements.txt
-echo "requests>=2.28.1" >> requirements.txt
-echo "numpy>=1.23.5" >> requirements.txt
-
-# --- 3. Коммит и отправка на GitHub ---
-
-# Добавление всех файлов
-git add .
-
-# Создание первого коммита (используем стандарты Conventional Commits)
-git commit -m "chore: Initial project setup with full documentation"
-
-# Установка главной ветки
-git branch -M main
-
-# Привязка к удаленному репозиторию на GitHub
-# !!! ОБЯЗАТЕЛЬНО ЗАМЕНИТЕ ЭТУ СТРОКУ !!!
-# Замените <ВАШЕ_ИМЯ_ПОЛЬЗОВАТЕЛЯ>
-REPO_URL="https://github.com/<ВАШЕ_ИМЯ_ПОЛЬЗОВАТЕЛЯ>/$PROJECT_NAME.git"
-git remote add origin $REPO_URL
-
-# Отправка кода на GitHub
-git push -u origin main
+# 2.3. CODE_OF_CONDUCT.md (Кодекс поведения для сообщества)
+echo "# Кодекс поведения (Code of Conduct)" > CODE_OF_CONDUCT.md
+echo "\nМы стремимся сделать участие в этом проекте приятным для всех, независимо от уровня опыта, пола или происхождения." >> CODE_OF_CONDUCT.md
+echo "## 🤝 Наши стандарты" >> CODE_OF_CONDUCT.md
+echo "* У
